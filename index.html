@@ -146,7 +146,7 @@
         }
 
         .hero h1 span {
-            background: var(--gradient-1);
+            background: linear-gradient(135deg, #f97316 0%, #ec4899 50%, #ef4444 100%);;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -206,8 +206,9 @@
         }
 
         .btn-primary {
-            background: var(--gradient-1);
-            color: white;
+            background: linear-gradient(135deg, #facc15 0%, #f59e0b 50%, #f97316 100%);
+            box-shadow: 0 4px 20px rgba(250, 204, 21, 0.3);;
+            color: rgb(64, 0, 255);
             box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
         }
 
@@ -515,6 +516,378 @@
         </div>
 
 </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Peloponnese · portfolio insert</title>
+  <style>
+    /* self-contained styling — scoped to .green-peloponnese-card */
+    .green-peloponnese-card {
+      --card-bg: #f8fbf7;
+      --card-border: #cbdcd0;
+      --accent-green: #1b6b4b;
+      --accent-light: #d9efe5;
+      --text-dark: #1e2b26;
+      --text-muted: #3f554b;
+      --shadow: 0 12px 28px -8px rgba(0, 30, 10, 0.12), 0 4px 12px rgba(0, 0, 0, 0.02);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      max-width: 960px;
+      margin: 2rem auto;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 2rem;
+      padding: 2rem 2rem 1.8rem;
+      box-shadow: var(--shadow);
+      color: var(--text-dark);
+      line-height: 1.5;
+      transition: all 0.15s ease;
+    }
+
+    @media (max-width: 600px) {
+      .green-peloponnese-card {
+        padding: 1.5rem 1.25rem;
+        border-radius: 1.5rem;
+        margin: 1rem;
+      }
+    }
+
+    .green-peloponnese-card .card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+      border-bottom: 1px dashed #b8cfc2;
+      padding-bottom: 1.25rem;
+    }
+
+    .green-peloponnese-card .card-header h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin: 0;
+      color: #0f3d2b;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .green-peloponnese-card .card-header h2::before {
+      content: "🌿";
+      font-size: 1.9rem;
+      line-height: 1;
+      filter: drop-shadow(0 2px 4px rgba(27, 107, 75, 0.2));
+    }
+
+    .green-peloponnese-card .pill {
+      background: #e6f0ea;
+      border-radius: 100px;
+      padding: 0.35rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+      color: #1b6b4b;
+      border: 1px solid #b8d5c6;
+      white-space: nowrap;
+    }
+
+    .green-peloponnese-card .crisis-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem 2.5rem;
+      background: #ffffffd9;
+      border-radius: 1.25rem;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1.8rem;
+      border: 1px solid #cfe2d7;
+      backdrop-filter: blur(2px);
+      box-shadow: 0 2px 6px rgba(0, 40, 20, 0.02);
+    }
+
+    .green-peloponnese-card .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .green-peloponnese-card .stat-icon {
+      font-size: 1.6rem;
+      line-height: 1;
+    }
+
+    .green-peloponnese-card .stat-text {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #1f3f32;
+    }
+
+    .green-peloponnese-card .stat-text strong {
+      font-weight: 700;
+      color: #0b4230;
+      background: #e2f0e9;
+      padding: 0.1rem 0.3rem;
+      border-radius: 0.3rem;
+    }
+
+    .green-peloponnese-card .initiatives-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .green-peloponnese-card .initiative {
+      background: white;
+      border-radius: 1.25rem;
+      padding: 1.4rem 1.2rem 1.2rem;
+      border: 1px solid #d2e4da;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      transition: border-color 0.15s, box-shadow 0.2s;
+    }
+
+    .green-peloponnese-card .initiative:hover {
+      border-color: #8ebdab;
+      box-shadow: 0 8px 18px -8px rgba(27, 107, 75, 0.18);
+    }
+
+    .green-peloponnese-card .initiative h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: #124b36;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .green-peloponnese-card .initiative h3 span {
+      font-size: 1.3rem;
+    }
+
+    .green-peloponnese-card .initiative p {
+      font-size: 0.94rem;
+      color: #2c4d3e;
+      margin: 0.5rem 0 0.75rem;
+      line-height: 1.45;
+    }
+
+    .green-peloponnese-card .highlight-badge {
+      display: inline-block;
+      background: #e7f3ed;
+      border-radius: 30px;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: #0b4c34;
+      border: 1px solid #b3d3c2;
+      margin-top: 0.3rem;
+    }
+
+    .green-peloponnese-card .funding-gap {
+      background: #f5f9f6;
+      border-left: 5px solid #db7f4b;
+      border-radius: 1rem;
+      padding: 1rem 1.5rem;
+      margin: 1.8rem 0 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem 1.5rem;
+    }
+
+    .green-peloponnese-card .funding-gap .gap-icon {
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .green-peloponnese-card .funding-gap .gap-text {
+      flex: 1;
+      font-weight: 500;
+      color: #2c3f36;
+    }
+
+    .green-peloponnese-card .funding-gap .gap-text strong {
+      color: #a14f1d;
+      font-weight: 700;
+      background: #fff2e5;
+      padding: 0.05rem 0.4rem;
+      border-radius: 0.4rem;
+    }
+
+    .green-peloponnese-card .recs-section {
+      background: linear-gradient(135deg, #eef7f2 0%, #e2f0e9 100%);
+      border-radius: 1.5rem;
+      padding: 1.5rem 1.75rem;
+      margin-top: 1rem;
+      border: 1px solid #bdd9cb;
+    }
+
+    .green-peloponnese-card .recs-section h4 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0 0 1rem 0;
+      color: #144b36;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .green-peloponnese-card .recs-section h4::before {
+      content: "⚡";
+      font-size: 1.4rem;
+    }
+
+    .green-peloponnese-card .rec-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .green-peloponnese-card .rec-list li {
+      background: white;
+      border-radius: 2rem;
+      padding: 0.5rem 1.2rem 0.5rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #173e2e;
+      border: 1px solid #aacbb9;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .green-peloponnese-card .rec-list li::before {
+      content: "→";
+      font-weight: 700;
+      color: #1b6b4b;
+      font-size: 1.1rem;
+      margin-right: 0.15rem;
+    }
+
+    .green-peloponnese-card .footer-note {
+      margin-top: 1.75rem;
+      font-size: 0.8rem;
+      color: #5c7568;
+      border-top: 1px solid #d0e2d8;
+      padding-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .green-peloponnese-card .footer-note .tag {
+      background: #dfeee7;
+      border-radius: 30px;
+      padding: 0.25rem 0.9rem;
+      font-size: 0.75rem;
+      color: #1e5a41;
+      font-weight: 500;
+    }
+
+    /* subtle link style if any anchors appear */
+    .green-peloponnese-card a {
+      color: #1b6b4b;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #a0c5b3;
+    }
+
+    .green-peloponnese-card a:hover {
+      border-bottom-color: #1b6b4b;
+    }
+
+    /* make sure emojis don't break on windows */
+    .green-peloponnese-card .stat-icon,
+    .green-peloponnese-card .gap-icon {
+      font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <!-- Green Peloponnese portfolio card – ready to insert -->
+  <div class="green-peloponnese-card">
+    <div class="card-header">
+      <h2>Green Peloponnese</h2>
+      <div class="pill">civic climate corps · trails · energy</div>
+    </div>
+
+    <!-- dual crisis highlighted -->
+    <div class="crisis-stats">
+      <div class="stat-item">
+        <span class="stat-icon">🔥</span>
+        <span class="stat-text"><strong>1,477</strong> wildfires · <strong>10,000+ km²</strong> scorched</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-icon">🧠</span>
+        <span class="stat-text"><strong>brain drain</strong> — young talent leaving</span>
+      </div>
+    </div>
+
+    <!-- bottom-up alternatives -->
+    <div class="initiatives-grid">
+      <!-- Ecogenia -->
+      <div class="initiative">
+        <h3><span>🌱</span> Ecogenia</h3>
+        <p>Greece's first civic climate corps. Paid service programs for 18–30 year olds. Dorida pilot restored trail networks to reconnect isolated Peloponnesian villages and seed ecotourism.</p>
+        <div class="highlight-badge">~€4 in community value per €1 invested</div>
+      </div>
+
+      <!-- Paths of Greece -->
+      <div class="initiative">
+        <h3><span>🥾</span> Paths of Greece</h3>
+        <p>Developed <strong>2,000+ km</strong> of hiking trails across Greece, many in the Peloponnese (Mani, Messenia, Kythera) — turning neglected footpaths into green economic infrastructure.</p>
+        <div class="highlight-badge">trails as infrastructure</div>
+      </div>
+
+      <!-- Energy cooperatives -->
+      <div class="initiative">
+        <h3><span>☀️</span> Energy cooperatives</h3>
+        <p>Law 5037/2023 enables Renewable Energy Communities. The Peloponnese has abundant solar resource, but needs organizational capacity to launch rural cooperatives.</p>
+        <div class="highlight-badge">solar + community power</div>
+      </div>
+    </div>
+
+    <!-- EU funding gap callout -->
+    <div class="funding-gap">
+      <span class="gap-icon">💶</span>
+      <div class="gap-text">
+        <strong>€400M</strong> in structural funds exist, but small, youth-led initiatives struggle to access them.
+        The article argues for a <strong>regional rapid-grant mechanism</strong>.
+      </div>
+    </div>
+
+    <!-- five concrete recommendations -->
+    <div class="recs-section">
+      <h4>Five concrete recommendations</h4>
+      <ul class="rec-list">
+        <li>Scale civic service</li>
+        <li>Invest in trails as infrastructure</li>
+        <li>Seed energy co-ops</li>
+        <li>Close the bottom-up funding gap</li>
+        <li>Frame green jobs as a brain-drain reversal strategy</li>
+      </ul>
+    </div>
+
+    <div class="footer-note">
+      <span>Green Peloponnese · from crisis to community-led renewal</span>
+      <span class="tag">#climatecorps #trails #energycommunities</span>
+    </div>
+  </div>
+  <!-- end Green Peloponnese card -->
+</body>
+</html>
 
 
 
@@ -562,7 +935,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>Vielen Dank! — Built with passion for 3D & VFX.</p>
+        <p>Vielen Dank!</p>
         <p style="margin-top: 0.5rem; font-size: 0.75rem;">© 2026 Your Name. All rights reserved.</p>
     </footer>
 
